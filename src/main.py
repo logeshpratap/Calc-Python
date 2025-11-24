@@ -1,54 +1,54 @@
-# from fastapi import FastAPI
+from fastapi import FastAPI
 
-# app = FastAPI()
-# # dummy line of code 
+app = FastAPI()
+# dummy line of code 
 
-# @app.get("/add")
-# def add(a: float, b: float):
-#     return {"result": a + b}
+@app.get("/add")
+def add(a: float, b: float):
+    return {"result": a + b}
 
-# @app.get("/subtract")
-# def subtract(a: float, b: float):
-#     return {"result": a - b}
+@app.get("/subtract")
+def subtract(a: float, b: float):
+    return {"result": a - b}
 
-# @app.get("/multiply")
-# def multiply(a: float, b: float):
-#     return {"result": a * b}
+@app.get("/multiply")
+def multiply(a: float, b: float):
+    return {"result": a * b}
 
-# @app.get("/divide")
-# def divide(a: float, b: float):
-#     if b == 0:
-#         return {"error": "Cannot divide by zero"}
-#     return {"result": a / b}
+@app.get("/divide")
+def divide(a: float, b: float):
+    if b == 0:
+        return {"error": "Cannot divide by zero"}
+    return {"result": a / b}
 
-# @app.get("/power")
-# def power(a: float, b: float):
-#     return {"result": a ** b}
+@app.get("/power")
+def power(a: float, b: float):
+    return {"result": a ** b}
 
-# @app.get("/modulo")
-# def modulo(a: float, b: float):
-#     if b == 0:
-#         return {"error": "Cannot modulo by zero"}
-#     return {"result": a % b}
+@app.get("/modulo")
+def modulo(a: float, b: float):
+    if b == 0:
+        return {"error": "Cannot modulo by zero"}
+    return {"result": a % b}
 
-# @app.get("/average")
-# def average(a: float, b: float):
-#     return {"result": (a + b) / 2}
-
-
+@app.get("/average")
+def average(a: float, b: float):
+    return {"result": (a + b) / 2}
 
 
 
 
-import sqlite3
 
-def get_user(username):
-    conn = sqlite3.connect("users.db")
-    cursor = conn.cursor()
-    # Vulnerable: string concatenation builds query directly
-    query = "SELECT * FROM users WHERE username = '" + username + "';"
-    cursor.execute(query)
-    return cursor.fetchall()
+
+# import sqlite3
+
+# def get_user(username):
+#     conn = sqlite3.connect("users.db")
+#     cursor = conn.cursor()
+#     # Vulnerable: string concatenation builds query directly
+#     query = "SELECT * FROM users WHERE username = '" + username + "';"
+#     cursor.execute(query)
+#     return cursor.fetchall()
 
 
 
