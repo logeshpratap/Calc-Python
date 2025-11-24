@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 
 app = FastAPI()
-# dummy line of code 
 
 @app.get("/add")
 def add(a: float, b: float):
@@ -34,32 +33,3 @@ def modulo(a: float, b: float):
 @app.get("/average")
 def average(a: float, b: float):
     return {"result": (a + b) / 2}
-
-
-
-
-
-
-# import sqlite3
-
-# def get_user(username):
-#     conn = sqlite3.connect("users.db")
-#     cursor = conn.cursor()
-#     # Vulnerable: string concatenation builds query directly
-#     query = "SELECT * FROM users WHERE username = '" + username + "';"
-#     cursor.execute(query)
-#     return cursor.fetchall()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
